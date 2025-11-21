@@ -1,0 +1,39 @@
+@use 'variables' as *;
+
+html, body, #root {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background: $color-bg;
+  font-family: 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* The 3D World Container */
+.canvas-layer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: $z-canvas;
+  outline: none;
+}
+
+/* The UI Overlay Container */
+.interface-layer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: $z-interface;
+  pointer-events: none; /* Crucial: Lets clicks pass through to Canvas */
+  
+  /* Reset pointer events for actual UI elements */
+  * {
+    pointer-events: auto;
+  }
+}
