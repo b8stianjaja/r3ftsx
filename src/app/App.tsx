@@ -2,6 +2,7 @@ import { Leva } from 'leva'
 import { useStore } from '@state/index'
 import SceneRoot from '@webgl/SceneRoot'
 import InterfaceRoot from '@interface/InterfaceRoot'
+import Loader from '@interface/Loader'
 import '@styles/main.scss'
 
 export default function App() {
@@ -14,8 +15,11 @@ export default function App() {
 
       {/* 2. The DOM Layer */}
       <InterfaceRoot />
+      
+      {/* 3. The Loading Layer */}
+      <Loader />
 
-      {/* 3. The Debug Layer */}
+      {/* 4. The Debug Layer */}
       <Leva hidden={!debug} />
     </>
   )
